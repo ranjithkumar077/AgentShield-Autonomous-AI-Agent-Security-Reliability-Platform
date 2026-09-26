@@ -1,0 +1,39 @@
+# default.yaml
+# Security policies
+# tool -> operation -> decision (allow, block, approval)
+
+database:
+  read: allow
+  select: allow
+  get: allow
+  insert: approval
+  create: approval
+  update: approval
+  delete: block
+  drop: block
+
+filesystem:
+  read: allow
+  list: allow
+  get: allow
+  write: approval
+  create: approval
+  update: approval
+  delete: block
+  remove: block
+
+github:
+  read: allow
+  search: allow
+  list: allow
+  get: allow
+  write: approval
+  create: approval
+  update: approval
+  delete: block
+
+shell:
+  execute: approval
+
+terminal:
+  execute: approval

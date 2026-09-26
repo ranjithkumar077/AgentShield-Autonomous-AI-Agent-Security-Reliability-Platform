@@ -1,0 +1,15 @@
+policies:
+  - tool: database
+    operation: delete
+    resource: users
+    scope: production
+    risk_score: 90
+    decision: deny
+    reason: "Destructive operation on production data"
+  - tool: storage
+    operation: read
+    resource: public_bucket
+    scope: any
+    risk_score: 10
+    decision: allow
+    reason: "Read-only access to public bucket"
